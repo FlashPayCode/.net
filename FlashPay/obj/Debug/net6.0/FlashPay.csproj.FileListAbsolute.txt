@@ -1,0 +1,12 @@
+D:\FlashPaySDK\C#\FlashPay\FlashPay\bin\Debug\net6.0\FlashPay.deps.json
+D:\FlashPaySDK\C#\FlashPay\FlashPay\bin\Debug\net6.0\FlashPay.dll
+D:\FlashPaySDK\C#\FlashPay\FlashPay\bin\Debug\net6.0\FlashPay.pdb
+D:\FlashPaySDK\C#\FlashPay\FlashPay\obj\Debug\net6.0\FlashPay.csproj.AssemblyReference.cache
+D:\FlashPaySDK\C#\FlashPay\FlashPay\obj\Debug\net6.0\FlashPay.GeneratedMSBuildEditorConfig.editorconfig
+D:\FlashPaySDK\C#\FlashPay\FlashPay\obj\Debug\net6.0\FlashPay.AssemblyInfoInputs.cache
+D:\FlashPaySDK\C#\FlashPay\FlashPay\obj\Debug\net6.0\FlashPay.AssemblyInfo.cs
+D:\FlashPaySDK\C#\FlashPay\FlashPay\obj\Debug\net6.0\FlashPay.csproj.CoreCompileInputs.cache
+D:\FlashPaySDK\C#\FlashPay\FlashPay\obj\Debug\net6.0\FlashPay.dll
+D:\FlashPaySDK\C#\FlashPay\FlashPay\obj\Debug\net6.0\refint\FlashPay.dll
+D:\FlashPaySDK\C#\FlashPay\FlashPay\obj\Debug\net6.0\FlashPay.pdb
+D:\FlashPaySDK\C#\FlashPay\FlashPay\obj\Debug\net6.0\ref\FlashPay.dll
