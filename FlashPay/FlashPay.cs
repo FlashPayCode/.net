@@ -46,7 +46,7 @@ namespace FlashPay
 
 
 
-        protected private EnData encodeFormatData(String data)
+         private EnData encodeFormatData(String data)
         {
             string checkData = this.HashKey + data + this.HashIv;
             string checkKeys = SHA256Encoder.Encrypt(checkData);
