@@ -46,7 +46,7 @@ namespace FlashPay
 
 
 
-         private EnData encodeFormatData(String data)
+         private EnData encodeData(String data)
         {
             string checkData = this.HashKey + data + this.HashIv;
             string checkKeys = SHA256Encoder.Encrypt(checkData);
@@ -62,7 +62,7 @@ namespace FlashPay
 
 
 
-        public string decodeFormatData(String data)
+        private string decodeData(String data)
         {
             if (data == null || data.Equals(string.Empty))
                 throw new Exception("feedback data is null");
@@ -101,7 +101,7 @@ namespace FlashPay
         }
 
 
-        protected private string ServerPost(string parameters, string url)
+        protected private string serverPost(string parameters, string url)
         {
             string szResult = String.Empty;
 

@@ -19,11 +19,11 @@ namespace FlashPay
         private string querytrade = "/querytrade.php";
 
 
-        public string checkout(Order order)
+        public string checkOut(Order order)
         {
             checkModel(order);
             string jsonString = JsonSerializer.Serialize(order);
-             var endata=encodeFormatData(jsonString);
+             var endata=encodeData(jsonString);
             StringBuilder builder = new StringBuilder();
             builder.Append("<!DOCTYPE html><html><head><meta charset=\"utf - 8\"></head><body>");
             builder.Append("<form id=\"FLASHForm\" action=\"" + this.ServiceURL + trade + "\" method=\"post\">");
@@ -37,7 +37,6 @@ namespace FlashPay
             builder.Append("</script>");
             builder.Append("</form> </body> </html>");
             return builder.ToString();
-
         }
         public string queryOrder(string orderNo)
         {
@@ -46,8 +45,8 @@ namespace FlashPay
             queryOrder.mer_id = this.MerchantID;
             checkModel(queryOrder);
             string jsonString = JsonSerializer.Serialize(queryOrder);
-            var endata = encodeFormatData(jsonString);
-            return decodeFormatData(ServerPost(JsonSerializer.Serialize(endata),this.ServiceURL+ querytrade));
+            var endata = encodeData(jsonString);
+            return decodeData(serverPost(JsonSerializer.Serialize(endata),this.ServiceURL+ querytrade));
         }
 
         public string queryMultiOrder(DateTime start, DateTime end)
@@ -61,8 +60,8 @@ namespace FlashPay
             queryMultiOrder.start_date = start.ToString("yyyy-MM-dd");
             checkModel(queryMultiOrder);
             string jsonString = JsonSerializer.Serialize(queryMultiOrder);
-            var endata = encodeFormatData(jsonString);
-            return decodeFormatData(ServerPost(JsonSerializer.Serialize(endata), this.ServiceURL + querytrade));
+            var endata = encodeData(jsonString);
+            return decodeData(serverPost(JsonSerializer.Serialize(endata), this.ServiceURL + querytrade));
         }
         public string doTrade(string orderNO, double orderPrice)
         {
@@ -72,8 +71,13 @@ namespace FlashPay
             trade.ord_no = orderNO;
             checkModel(trade);
             string jsonString = JsonSerializer.Serialize(trade);
-            var endata = encodeFormatData(jsonString);
-            return decodeFormatData(ServerPost(JsonSerializer.Serialize(endata), this.ServiceURL + querytrade));
+            var endata = encodeData(jsonString);
+            return decodeData(serverPost(JsonSerializer.Serialize(endata), this.ServiceURL + querytrade));
+        }
+
+        public string checkoutFeedback(string response)
+        {
+            return  decodeData(response);
         }
 
 

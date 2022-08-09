@@ -14,9 +14,7 @@ namespace FlashPay.Help
     public static class AES256
     {
 
-
-
-        private static string HexStringFromBytes(byte[] data)
+        private static string bin2Hex(byte[] data)
         {
             StringBuilder sb = new StringBuilder(data.Length * 3);
             foreach (byte b in data)
@@ -26,7 +24,7 @@ namespace FlashPay.Help
             return sb.ToString().ToUpper();
         }
 
-        private static byte[] hex2bin(string hexContent)
+        private static byte[] hex2Bin(string hexContent)
         {
             hexContent = hexContent.Replace(" ", "");
             byte[] buffer = new byte[hexContent.Length / 2];
@@ -62,13 +60,13 @@ namespace FlashPay.Help
                     cipherData = ms.ToArray();
                 }
             }
-            return HexStringFromBytes(cipherData);
+            return bin2Hex(cipherData);
         }
 
         internal static string Decrypt(string HashKey, string HashIv, string EncodeString)
         {
             string plainText;
-            byte[] combinedData = hex2bin(EncodeString);
+            byte[] combinedData = hex2Bin(EncodeString);
             using (Aes aes = Aes.Create())
             {
                 aes.Key = Encoding.UTF8.GetBytes(HashKey);
